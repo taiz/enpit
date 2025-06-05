@@ -1,8 +1,8 @@
 class Ranking < ActiveRecord::Base
 
   BASE_URL = "https://app.rakuten.co.jp/services/api/BooksTotal/Search/20130522"
-  APPL_ID = "1055548998906694747"
-  SECRET_KEY = ""
+  APPL_ID = ENV['RAKUTEN_APP_ID']
+  SECRET_KEY = ENV['RAKUTEN_SECRET_KEY']
 
   def self.fetch
     httpClient = HTTPClient.new
